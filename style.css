@@ -144,7 +144,7 @@ body {
   margin-bottom: 1px;  /* Madde aralığını azalt */
 }
 
-/* İsim–fiyat satırı */
+/* İsim–fiyat satırıv2 */
 .item-header {
   grid-column: 1 / -1;
   display: flex;
