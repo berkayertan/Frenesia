@@ -1,9 +1,138 @@
+.container-vertical {
+  display: none;
+}
+
+.container-horizontal {
+  display: block;
+  /* veya flex; zaten tanımlı */
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .small {
+    font-size: 0.55rem !important;
+  }
+
+  /* yatayı gizle, dikeyi göster */
+  .container-horizontal {
+    display: none;
+  }
+
+  .container-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    background: #fff;
+    min-height: 100vh;
+  }
+
+  .v-logo {
+    width: 120px;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
+  .v-title {
+    font-family: 'Nexa ExtraLight', Arial, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .v-menu-list {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+  }
+
+  .v-category-title {
+    font-family: 'Nexa Heavy', Arial, sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .v-item {
+    margin-bottom: 3px;
+  }
+
+  .v-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.9rem;
+  }
+
+  .v-item-desc {
+    font-family: 'Nexa ExtraLight', Arial, sans-serif;
+    font-size: 0.65rem;
+    color: #555;
+    line-height: 1.0;
+    max-width: 266px;
+  }
+
+  .v-bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+  }
+
+  .item-name {
+    font-family: 'Nexa Heavy', Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .item-price {
+    font-family: 'Nexa ExtraLight', Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+}
+
+.v-bottom-category {
+  margin-bottom: 30px;
+}
+
+.v-bottom-category-border {
+  border-left: 1px solid black;
+  padding-left: 10px;
+}
+
+.v-bottom-title {
+  font-family: 'Nexa Heavy', Arial, sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.v-bottom-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  font-family: 'Nexa Heavy', Arial, sans-serif;
+}
+
+.v-price {
+  font-family: 'Nexa ExtraLight', Arial, sans-serif;
+}
+
+.v-footer-image {
+  width: 200px;
+  margin-top: 40px;
+}
+
 /* === 1. FONT‑FACE TANIMLARI === */
 @font-face {
   font-family: 'Nexa ExtraLight';
   src: url('fonts/Nexa-ExtraLight.woff2') format('woff2'),
-       url('fonts/Nexa-ExtraLight.woff')  format('woff'),
-       url('fonts/Nexa-ExtraLight.ttf')   format('truetype');
+    url('fonts/Nexa-ExtraLight.woff') format('woff'),
+    url('fonts/Nexa-ExtraLight.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -11,8 +140,8 @@
 @font-face {
   font-family: 'Nexa Heavy';
   src: url('fonts/Nexa-Heavy.woff2') format('woff2'),
-       url('fonts/Nexa-Heavy.woff')  format('woff'),
-       url('fonts/Nexa-Heavy.ttf')   format('truetype');
+    url('fonts/Nexa-Heavy.woff') format('woff'),
+    url('fonts/Nexa-Heavy.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -20,8 +149,8 @@
 @font-face {
   font-family: 'Nexa ExtraHeavy';
   src: url('fonts/Nexa-ExtraHeavy.woff2') format('woff2'),
-       url('fonts/Nexa-ExtraHeavy.woff')  format('woff'),
-       url('fonts/Nexa-ExtraHeavy.ttf')   format('truetype');
+    url('fonts/Nexa-ExtraHeavy.woff') format('woff'),
+    url('fonts/Nexa-ExtraHeavy.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,11 +158,13 @@
 
 /* ===== Reset & Gövde ===== */
 
-html, body {
+html,
+body {
   background-color: #fff;
 }
 
-.sidebar, .content {
+.sidebar,
+.content {
   background-color: #fff;
 }
 
@@ -51,7 +182,6 @@ body {
 
 /* ===== Genel Flex Düzeni ===== */
 .container {
-  display: flex;
   min-height: 100vh;
 }
 
@@ -73,9 +203,12 @@ body {
 
 /* Yeni: sidebar içindeki özel fotoğraf */
 .custom-photo {
-  max-width: 100%;      /* sidebar genişliğini aşmasın */
-  height: auto;         /* orantıyı koru */
-  margin: 10px 0 30px;  /* logo ile başlık arasına boşluk */
+  max-width: 100%;
+  /* sidebar genişliğini aşmasın */
+  height: auto;
+  /* orantıyı koru */
+  margin: 10px 0 30px;
+  /* logo ile başlık arasına boşluk */
 }
 
 .headline {
@@ -120,7 +253,8 @@ body {
 }
 
 .category.sandwich {
-  margin-bottom: 40px;  /* Sandviç ile alt satır arasındaki boşluğu ayarla */
+  margin-bottom: 40px;
+  /* Sandviç ile alt satır arasındaki boşluğu ayarla */
 }
 
 .category-title {
@@ -141,7 +275,8 @@ body {
   display: grid;
   grid-template-columns: auto auto;
   align-items: flex-start;
-  margin-bottom: 1px;  /* Madde aralığını azalt */
+  margin-bottom: 1px;
+  /* Madde aralığını azalt */
 }
 
 /* İsim–fiyat satırıv2 */
@@ -152,25 +287,12 @@ body {
   align-items: baseline;
 }
 
-.item-name {
-  font-size: 1.2rem;
-  font-family: 'Nexa Heavy', Arial, sans-serif;
-}
-
-.item-price {
-  font-size: 1.25rem;
-}
-
 /* Açıklama satırları */
 .item-desc {
   grid-column: 1 / -1;
   font-size: 1rem;
   line-height: 1.4;
   color: #555;
-}
-
-.small {
-  font-size: 0.85rem;
 }
 
 /* Alt satır: İçecek ve Dondurma yan yana */
@@ -182,4 +304,30 @@ body {
 .bottom-row .category {
   flex: 1;
   margin-bottom: 0;
+}
+
+@media only screen and (min-width: 769px),
+only screen and (orientation: landscape) {
+  .container-horizontal {
+    display: flex;
+    /* veya zaten tanımladığınız gibi */
+  }
+
+  .container-vertical {
+    display: none;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+    font-family: 'Nexa Heavy', Arial, sans-serif;
+  }
+
+  .item-price {
+    font-size: 1.25rem;
+  }
+
+  .small {
+    font-size: 0.85rem;
+  }
+
 }
