@@ -1,0 +1,185 @@
+/* === 1. FONT‑FACE TANIMLARI === */
+@font-face {
+  font-family: 'Nexa ExtraLight';
+  src: url('fonts/Nexa-ExtraLight.woff2') format('woff2'),
+       url('fonts/Nexa-ExtraLight.woff')  format('woff'),
+       url('fonts/Nexa-ExtraLight.ttf')   format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa Heavy';
+  src: url('fonts/Nexa-Heavy.woff2') format('woff2'),
+       url('fonts/Nexa-Heavy.woff')  format('woff'),
+       url('fonts/Nexa-Heavy.ttf')   format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa ExtraHeavy';
+  src: url('fonts/Nexa-ExtraHeavy.woff2') format('woff2'),
+       url('fonts/Nexa-ExtraHeavy.woff')  format('woff'),
+       url('fonts/Nexa-ExtraHeavy.ttf')   format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ===== Reset & Gövde ===== */
+
+html, body {
+  background-color: #fff;
+}
+
+.sidebar, .content {
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nexa ExtraLight', Arial, sans-serif;
+  color: #383D38;
+  line-height: 1.4;
+}
+
+/* ===== Genel Flex Düzeni ===== */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sol Sütun (Sidebar) ===== */
+.sidebar {
+  flex: 1;
+  padding: 40px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  max-width: 180px;
+  margin-bottom: 20px;
+}
+
+/* Yeni: sidebar içindeki özel fotoğraf */
+.custom-photo {
+  max-width: 100%;      /* sidebar genişliğini aşmasın */
+  height: auto;         /* orantıyı koru */
+  margin: 10px 0 30px;  /* logo ile başlık arasına boşluk */
+}
+
+.headline {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.illustration {
+  max-width: 250px;
+  margin-bottom: 30px;
+}
+
+.headline,
+.category-title,
+.menu-label {
+  font-family: 'Nexa Heavy', Arial, sans-serif;
+  /* varsa font-weight: bold; satırlarını kaldır. 
+     ExtraHeavy kendi ağırlığıyla zaten kalın gelir. */
+}
+
+.menu-label {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-top: auto;
+}
+
+/* ===== Sağ Sütun (Content) ===== */
+.content {
+  flex: 2;
+  padding: 40px 60px;
+}
+
+/* Kategori başlıkları */
+.category {
+  margin-bottom: 60px;
+}
+
+.category.sandwich {
+  margin-bottom: 40px;  /* Sandviç ile alt satır arasındaki boşluğu ayarla */
+}
+
+.category-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Menü listesi */
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: flex-start;
+  margin-bottom: 1px;  /* Madde aralığını azalt */
+}
+
+/* İsim–fiyat satırı */
+.item-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.item-name {
+  font-size: 1.2rem;
+  font-family: 'Nexa Heavy', Arial, sans-serif;
+}
+
+.item-price {
+  font-size: 1.25rem;
+}
+
+/* Açıklama satırları */
+.item-desc {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+/* Alt satır: İçecek ve Dondurma yan yana */
+.bottom-row {
+  display: flex;
+  gap: 80px;
+}
+
+.bottom-row .category {
+  flex: 1;
+  margin-bottom: 0;
+}
