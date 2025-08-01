@@ -125,6 +125,8 @@
 .v-footer-image {
   width: 200px;
   margin-top: 40px;
+  background-color: transparent;
+  display: block;
 }
 
 /* === 1. FONT‑FACE TANIMLARI === */
@@ -203,7 +205,9 @@ body {
 
 /* Yeni: sidebar içindeki özel fotoğraf */
 .custom-photo {
+  background-color: transparent;
   max-width: 100%;
+  display: block;
   /* sidebar genişliğini aşmasın */
   height: auto;
   /* orantıyı koru */
